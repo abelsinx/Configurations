@@ -40,11 +40,22 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
+
+
+syntax on
+" ---------------------------------------------------------------------------
+" ---- Minimal configuration:
+set smartindent   " Do smart autoindenting when starting a new line
+set shiftwidth=4  " Set number of spaces per auto indentation
+set expandtab     " When using <Tab>, put spaces instead of a <tab> character
+
+" ---- Good to have for consistency
+"set tabstop=4   " Number of spaces that a <Tab> in the file counts for
+"set smarttab    " At <Tab> at beginning line inserts spaces set in shiftwidth
+" ---------------------------------------------------------------------------
 set number
 set autoindent
 
-syntax on
 silent! colorscheme dim
 set background=dark
 
@@ -56,7 +67,8 @@ highlight DiffAdd ctermfg=green cterm=bold
 highlight DiffDelete ctermfg=red cterm=bold
 highlight DiffChange ctermfg=yellow
 
-set colorcolumn=80
+set colorcolumn=110
+highlight colorcolumn ctermbg=darkgray
 
 Plugin 'ajh17/spacegray.vim'
 Plugin 'morhetz/gruvbox'
